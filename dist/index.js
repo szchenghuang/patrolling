@@ -4,13 +4,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _regenerator = require("babel-runtime/regenerator");
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require("babel-runtime/helpers/createClass");
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Patrolling = function () {
   function Patrolling(cap, timeout, flush, push) {
-    _classCallCheck(this, Patrolling);
+    (0, _classCallCheck3.default)(this, Patrolling);
 
     this._cap = cap;
     this._timeout = timeout;
@@ -21,15 +31,15 @@ var Patrolling = function () {
     this._timer = undefined;
   }
 
-  _createClass(Patrolling, [{
+  (0, _createClass3.default)(Patrolling, [{
     key: "flush",
     value: function flush() {
-      return regeneratorRuntime.async(function flush$(_context) {
+      return _regenerator2.default.async(function flush$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return regeneratorRuntime.awrap(this._flush());
+              return _regenerator2.default.awrap(this._flush());
 
             case 2:
               this.stopTimer();
@@ -44,12 +54,12 @@ var Patrolling = function () {
   }, {
     key: "push",
     value: function push(history) {
-      return regeneratorRuntime.async(function push$(_context2) {
+      return _regenerator2.default.async(function push$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.next = 2;
-              return regeneratorRuntime.awrap(this._push(history));
+              return _regenerator2.default.awrap(this._push(history));
 
             case 2:
               this._count = _context2.sent;
@@ -60,7 +70,7 @@ var Patrolling = function () {
               }
 
               _context2.next = 6;
-              return regeneratorRuntime.awrap(this.flush());
+              return _regenerator2.default.awrap(this.flush());
 
             case 6:
               this.stopTimer();
@@ -88,7 +98,7 @@ var Patrolling = function () {
       }
 
       this._timer = Meteor.setInterval(function _callee() {
-        return regeneratorRuntime.async(function _callee$(_context3) {
+        return _regenerator2.default.async(function _callee$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
@@ -98,7 +108,7 @@ var Patrolling = function () {
                 }
 
                 _context3.next = 3;
-                return regeneratorRuntime.awrap(_this.flush());
+                return _regenerator2.default.awrap(_this.flush());
 
               case 3:
               case "end":
@@ -115,7 +125,6 @@ var Patrolling = function () {
       this._timer = undefined;
     }
   }]);
-
   return Patrolling;
 }();
 
