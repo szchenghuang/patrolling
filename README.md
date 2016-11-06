@@ -19,6 +19,7 @@ npm install patrolling --save
 import Patrolling from 'patrolling';
 
 var patrolling = new Patrolling( capacity, timeout, flush, push );
+```
 
 ## Test ##
 
@@ -37,3 +38,4 @@ MIT. See [LICENSE.md][license] for details.
 [david_img]: https://david-dm.org/szchenghuang/patrolling/status.svg
 [david_site]: https://david-dm.org/szchenghuang/patrolling/
 [license]: http://github.com/szchenghuang/patrolling/blob/master/LICENSE.md
+
