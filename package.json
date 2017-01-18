@@ -15,7 +15,8 @@
     "buffer",
     "watch",
     "timeout",
-    "polling"
+    "polling",
+    "patrolling"
   ],
   "author": "szchenghuang",
   "license": "MIT",

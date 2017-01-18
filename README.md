@@ -5,12 +5,12 @@
 
 [![NPM][nodei_img]][nodei_site]
 
-Patrol buffers and flush periodically or when the buffer is full.
+Patrol buffers and flush, periodically or when the buffer is full.
 
 ## Installation ##
 
 ```sh
-npm install patrolling --save
+npm install patrolling
 ```
 
 ## Usage ##
@@ -18,15 +18,43 @@ npm install patrolling --save
 ```js
 import Patrolling from 'patrolling';
 
+/**
+ * @class Patrolling
+ *
+ * @constructor
+ * @param {function} capacity The capacity of the buffer, i.e., maximum number of elements to hold.
+ * @param {number} timeout Timeout in milliseconds to flush the buffer.
+ * @param {function} flush How to flush the buffer.
+ * @param {function} push How to push an element into the buffer.
+ */
 var patrolling = new Patrolling( capacity, timeout, flush, push );
 ```
 
-## Test ##
+## Example ##
 
 ```js
-npm test
+const buffer = [];
 
+const capacity = 10;
+const timeout = 100;
+const flush = function() { buffer = []; console.log( 'flushed' ); }
+const push = function( elem ) { buffer.push( elem ); }
+
+const cache = new Patrolling( capacity, timeout, flush, push );
+
+// At the tenth iteration the buffer is flushed because it hits the capacity.
+// The buffer ends up with five elements left when the loop ends.
+for ( var i = 0; i < 15; ++i ) {
+  cache.push( i );
+}
+
+// If execution so far lasts for at least 100 milliseconds, the remaining five
+// elements are flushed.
+
+// You can flush it yourself anytime as well.
+cache.flush();
 ```
+
 ## License ##
 
 MIT. See [LICENSE.md][license] for details.
