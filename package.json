@@ -1,6 +1,6 @@
 {
   "name": "patrolling",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Patrol buffers and flush periodically or when the buffer is full.",
   "main": "index.js",
   "scripts": {
