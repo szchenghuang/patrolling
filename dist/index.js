@@ -97,7 +97,7 @@ var Patrolling = function () {
         this.stopTimer();
       }
 
-      this._timer = Meteor.setInterval(function _callee() {
+      this._timer = setInterval(function _callee() {
         return _regenerator2.default.async(function _callee$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
@@ -121,7 +121,7 @@ var Patrolling = function () {
   }, {
     key: "stopTimer",
     value: function stopTimer() {
-      Meteor.clearInterval(this._timer);
+      clearInterval(this._timer);
       this._timer = undefined;
     }
   }]);

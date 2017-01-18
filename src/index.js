@@ -32,7 +32,7 @@ class Patrolling {
       this.stopTimer();
     }
 
-    this._timer = Meteor.setInterval( async () => {
+    this._timer = setInterval( async () => {
       if ( 0 < this._count ) {
         await this.flush();
       }
@@ -40,7 +40,7 @@ class Patrolling {
   }
 
   stopTimer() {
-    Meteor.clearInterval( this._timer );
+    clearInterval( this._timer );
     this._timer = undefined;
   }
 }
