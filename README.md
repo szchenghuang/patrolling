@@ -22,7 +22,7 @@ import Patrolling from 'patrolling';
  * @class Patrolling
  *
  * @constructor
- * @param {function} capacity The capacity of the buffer, i.e., maximum number of elements to hold.
+ * @param {number} capacity The capacity of the buffer, i.e., maximum number of elements to hold.
  * @param {number} timeout Timeout in milliseconds to flush the buffer.
  * @param {function} flush How to flush the buffer.
  * @param {function} push How to push an element into the buffer.
