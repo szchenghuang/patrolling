@@ -19,7 +19,6 @@ class Patrolling {
 
     if ( this._cap <= this._count ) {
       await this.flush();
-      this.stopTimer();
     }
 
     if ( !this._timer ) {
